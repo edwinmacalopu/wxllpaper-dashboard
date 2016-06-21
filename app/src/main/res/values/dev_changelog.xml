@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="changelog_enabled">true</bool>
+
+
+
+    <string-array name="changelog" translatable="false">
+
+        <item><![CDATA[ <b> 1.1 - 4 june 2016 </b> ]]></item>
+        <item><![CDATA[ <b>implementation of notifications
+             It is notified when new wallpapers are uploaded</b> ]]></item>
+        <item><![CDATA[ <b>new wallpaper by Sergio ventura </b> ]]></item>
+
+        <item><![CDATA[ <b> 1.0 - 26 may 2016 </b> ]]></item>
+        <item><![CDATA[ <b>wallpapers offered by Sergio ventura </b> ]]></item>
+
+    </string-array>
+
+</resources>

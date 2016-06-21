@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- True enables the nav drawer layout -->
+    <bool name="nav_drawer_mode_default">false</bool>
+    <!-- Good for testing to switch between tabs and nav drawer, true shows a checkbox option in the overflow menu -->
+    <bool name="allow_nav_drawer_mode_switch">false</bool>
+
+    <!-- True enables the homepage -->
+    <bool name="homepage_enabled">true</bool>
+    <string name="homepage_description">
+        beautiful wallpapers for your device
+    </string>
+    <!-- The large icon displayed in the home page -->
+    <drawable name="homepage_landing_icon">@drawable/ic_web</drawable>
+
+    <!-- URL to JSON file containing a map of wallpapers, leave empty to disable wallpapers. -->
+    <string name="wallpapers_json_url" formatted="false">
+    https://raw.githubusercontent.com/edwinMD/wxllpaper/master/wallpapers.json    </string>
+
+    <!-- Email used to send icon requests, leave empty to disable this feature. -->
+    <string name="icon_request_email"></string>
+
+    <!-- Max number of icons that can be sent per request. -1 disables max count. The interval must ALSO be set below. -->
+    <integer name="icon_request_maxcount">-1</integer>
+
+    <!--
+        The interval in seconds in which users must wait between sending icon requests. 0 or less disables it.
+
+        If you want minutes: [seconds] = [minutes] * 60
+        If you want hours:   [seconds] = [hours] * 3600
+        If you want days:    [seconds] = [days] * 86400
+        If you want weeks:   [seconds] = [weeks] * 604800
+    -->
+    <integer name="icon_request_limit_interval">-1</integer>
+
+    <!-- Public Base64 from the developer console for license checking, optional -->
+    <string name="licensing_public_key"></string>
+
+    <!-- When true, the app will open the last selected page during restarts -->
+    <bool name="persist_selected_page">true</bool>
+
+    <!-- Email used to send feedback, leave empty to disable this feature. -->
+    <string name="feedback_email">khiwendz@gmail.com</string>
+
+    <!-- %1$s gets replaced with the name of your icon pack -->
+    <string name="feedback_subject_line">%1$s Feedback</string>
+
+    <!--
+        License key from Services & APIs on the Developer Console. Same as what's used for license checking.
+        Leave empty to disable the donation function.
+    -->
+    <string name="donate_license_key">
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgfaJqunlTfe/VMtCl37eEcdZA5FtaiOPtXwulgKlJynYIgaf/NBIOQD45Sz5gqqdJ1d/GBXOt0IpQaZCzuf9a+z6v9sIo4nPFparJf9nNT5rfTWAK26sijc/5OC97F7QJd6gE6MiOC2LOxXXBWpqYVx4agFbOC00VQvAUje1rDFGmCKQlDPqY2f/wVkeI+OSmIO9lWTh66aQ9XkCUjUCGY8YyLQ0hmFhfwSm7AiIIlVf+sdPsvomhod+qlOb+BFggcQSduFTQC3wKX1fKbNpVpc+Yqaxs62IQ7NsbsVTM7EUr5GhPpm2unNhfhZ3Gmhq35T4a3/7LThSqyGqZ+qS9QIDAQAB
+    </string>
+
+    <!-- Names of donation options, e.g. "Buy me a pizza!" -->
+    <string-array name="donate_option_names">
+        <item>Buy me a soda! ($0.99)</item>
+        <item>Buy me a burger! ($5.00)</item>
+        <item>Buy me a pizza! ($10.00)</item>
+        <item>Buy me a meal! ($20.00)</item>
+    </string-array>
+
+    <!-- Names of donation option IDs, taken from the Developer Console -->
+    <string-array name="donate_option_ids">
+        <item>soda</item>
+        <item>burger</item>
+        <item>pizza</item>
+        <item>meal</item>
+    </string-array>
+
+    <!-- Leave empty to disable. A URL to a Polar Request Manager server. -->
+    <string name="polar_backend_host">
+
+    </string>
+
+    <!-- Host must also be filled in first. An app API key from Polar Request Manager. -->
+    <string name="polar_backend_apikey">
+
+    </string>
+
+    <!--
+        If set to true, Polar will fallback to sending an email for icon requests IF
+        Request manager upload fails (e.g. if the server is down temporarily).
+    -->
+    <bool name="polar_backend_email_fallback">false</bool>
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- DO NOT REMOVE THE BOTTOM 3 ITEMS OF EACH ARRAY, OTHERWISE TERMS ARE VIOLATED. -->
+
+    <string-array name="about_images" formatted="false" tools:ignore="TypographyDashes">
+        <item>https://lh3.googleusercontent.com/-xTyDBez1DdE/AAAAAAAAAAI/AAAAAAAAaZU/poexdsom4s4/s120-c/photo.jpg</item>
+        <item>https://lh3.googleusercontent.com/-3WZ3r4NElXU/AAAAAAAAAAI/AAAAAAAAPR0/OVKTcX6e0JY/s120-c/photo.jpg</item>
+        <item>https://lh3.googleusercontent.com/-SguW0tAFM2M/AAAAAAAAAAI/AAAAAAAAPkY/zBo1E5umbC8/s120-c/photo.jpg</item>
+        <item>https://lh3.googleusercontent.com/-mMe9cCCcm3Q/AAAAAAAAAAI/AAAAAAAAh2g/900TLdhn7dA/s120-c/photo.jpg</item>
+        <item>https://lh6.googleusercontent.com/-O7dc0DGPAqI/Vg32sOXsX3I/AAAAAAAAhZY/BjJsYr56mU4/s1134-no/902e6ff9-0742-4454-9100-f8fad3a3d94c</item>
+        <item>https://lh3.googleusercontent.com/-uRfg9FW83s4/AAAAAAAAAAI/AAAAAAAAKts/0FaBag1wvds/s120-c/photo.jpg</item>
+    </string-array>
+
+    <string-array name="about_covers" formatted="false" tools:ignore="TypographyDashes">
+        <item>https://lh3.googleusercontent.com/yA_Uw_oTHcZKJTLsR9NrEsIrBvYTXziordZgrr7T4qt-Al_hfyRhsh1ihMSvchi0430_h3bc1g=s767-fcrop64=1,0000137cffffeb2a</item>
+        <item>https://lh3.googleusercontent.com/BMkHk35U2TEy36-NXZlnFed95enm5IhJR5SYUG2-7E4I6Igus6zGrSJjgwo3Ufqn-pT3K3Jq=s767-fcrop64=1,00000000ffffffff</item>
+        <item>https://lh3.googleusercontent.com/LPPbJizHRTzlGfk6CeXqUlGYu_dcHnpt0-rUEzWKsMOHUkMu8V6Ty9tqIXc374bCnXGr7kUC=s759-fcrop64=1,000019e3dcf2d726</item>
+        <item>https://lh3.googleusercontent.com/9ptwA7GVKncIWib87qw6jb04ruU6lzejH5JDEhfmxv97vKgMHVBNAvTTbP61kggNDAZ3dA=s789-fcrop64=1,000027ffffffffff</item>
+        <item>https://lh5.googleusercontent.com/-Dm3-UxmIOnQ/ViuobTLiMmI/AAAAAAAAjDQ/MC9Z2tL4eb8/w1914-h1078-no/Valiant%2B%252B%2BWellingtomWorks.png</item>
+        <item>https://lh3.googleusercontent.com/yxKzdHQl92pYtMFHg9yLXsomPAmhjnQeAgIVh6qOT4jvqcChDrVlUazobAuaC00V4JFl=s640-fcrop64=1,002d0000ffd1ffff</item>
+    </string-array>
+
+    <string-array name="about_titles">
+        <item>Sergio Ventura</item>
+        <item>Harshpreet S</item>
+        <item>Edwin macalopu</item>
+        <item>Aidan Follestad</item>
+        <item>Tom Wellington</item>
+        <item>Daniel Ciao</item>
+    </string-array>
+
+    <string-array name="about_descriptions">
+        <item formatted="false"><![CDATA[good design<br><i>wallpapers and widgets</i>]]></item>
+        <item formatted="false"><![CDATA[Hello friends<br><i>Design & Illustrations</i>]]></item>
+        <item formatted="false"><![CDATA[Hello friends<br><i>android lover system</i>]]></item>
+        <item formatted="false"><![CDATA[I like rock/metal, programming, &amp; cars<br/><i>I made the dashboard happen &amp; helped design it</i>]]></item>
+        <item formatted="false"><![CDATA[I like rap, coffee, &amp; UI design<br/><i>I designed the dashboard</i>]]></item>
+        <item formatted="false"><![CDATA[I like playing piano, doing puzzles, &amp; making apps<br/><i>I primarily helped with animations and UI</i>]]></item>
+    </string-array>
+
+    <string-array name="about_buttons_names">
+        <item>Google+</item>
+        <item>Google+</item>
+        <item>Google+</item>
+        <item>Website|Google+|LinkedIn</item>
+        <item>Dribbble|Google+</item>
+        <item>Website|Google+|GitHub</item>
+    </string-array>
+
+    <string-array name="about_buttons_links">
+        <item>https://plus.google.com/u/0/+IvanLopezVentura</item>
+        <item>https://plus.google.com/u/0/102866873947848595911/about</item>
+        <item>https://plus.google.com/u/0/+edwinmacalopu</item>
+        <item>http://aidanfollestad.com|https://google.com/+AidanFollestad|https://www.linkedin.com/in/afollestad</item>
+        <item>https://dribbble.com/tomwellington|https://google.com/+TomWellington24</item>
+        <item>http://www.pluscubed.com|https://plus.google.com/+DanielCiao|https://github.com/plusCubed</item>
+    </string-array>
+
+</resources>

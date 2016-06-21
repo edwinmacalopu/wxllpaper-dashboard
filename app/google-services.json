@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "841292153828",
+    "firebase_url": "https://wxllpaper.firebaseio.com",
+    "project_id": "wxllpaper",
+    "storage_bucket": "wxllpaper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841292153828:android:51d8a90ae5327366",
+        "android_client_info": {
+          "package_name": "com.sergioventura.wxllpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841292153828-9gi1aj28cqtsnj6hountqq0ij0vjjnfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeJZE3T-mi66Bz1KeQ1r7SmjXtGnvF62c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
