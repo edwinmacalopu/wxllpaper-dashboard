@@ -2,14 +2,12 @@ package com.sergioventura.wxllpaper.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -39,8 +37,9 @@ import com.sergioventura.wxllpaper.viewer.ViewerActivity;
 
 import java.net.SocketTimeoutException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 import static com.sergioventura.wxllpaper.viewer.ViewerActivity.STATE_CURRENT_POSITION;
 
@@ -53,13 +52,15 @@ public class WallpapersFragment extends BasePageFragment implements
     public static final int RQ_CROPANDSETWALLPAPER = 8585;
     public static final int RQ_VIEWWALLPAPER = 2001;
     private static Toast mToast;
-    @Bind(android.R.id.list)
+
+    @BindView(android.R.id.list)
     RecyclerView mRecyclerView;
-    @Bind(android.R.id.empty)
+    @BindView(android.R.id.empty)
     TextView mEmpty;
-    @Bind(android.R.id.progress)
+    @BindView(android.R.id.progress)
     View mProgress;
     WallpaperUtils.WallpapersHolder mWallpapers;
+
     private WallpaperAdapter mAdapter;
     private String mQueryText;
     private final Runnable searchRunnable = new Runnable() {
@@ -69,6 +70,7 @@ public class WallpapersFragment extends BasePageFragment implements
             setListShown(true);
         }
     };
+    private Unbinder unbinder;
 
     public WallpapersFragment() {
     }
@@ -110,6 +112,7 @@ public class WallpapersFragment extends BasePageFragment implements
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.wallpapers, menu);
         super.onCreateOptionsMenu(menu, inflater);
+
         MenuItem mSearchItem = menu.findItem(R.id.search);
         SearchView mSearchView = (SearchView) MenuItemCompat.getActionView(mSearchItem);
         mSearchView.setQueryHint(getString(R.string.search_wallpapers));
@@ -133,41 +136,30 @@ public class WallpapersFragment extends BasePageFragment implements
         return super.onOptionsItemSelected(item);
     }
 
-    void openViewer(View view, int index) {
+    private void openViewer(View view, int index) {
         ImageView iv = (ImageView) view.findViewById(R.id.image);
 
         final Intent intent = new Intent(getActivity(), ViewerActivity.class);
         Bundle extras = new Bundle();
         extras.putSerializable("wallpapers", mWallpapers);
         extras.putInt(STATE_CURRENT_POSITION, index);
+        extras.putInt(ViewerActivity.EXTRA_WIDTH, iv.getWidth());
+        extras.putInt(ViewerActivity.EXTRA_HEIGHT, iv.getHeight());
         intent.putExtras(extras);
 
         final String transName = "view_" + index;
-        ViewCompat.setTransitionName(iv, transName);
         final ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 getActivity(), iv, transName);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //Somehow this works (setting status bar color in both MainActivity and here)
-            //to avoid image glitching through on when ViewActivity is first created.
-            getActivity().getWindow().setStatusBarColor(
-                    DialogUtils.resolveColor(getActivity(), R.attr.colorPrimaryDark));
-            View statusBar = getActivity().getWindow().getDecorView().findViewById(android.R.id.statusBarBackground);
-            if (statusBar != null) {
-                statusBar.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        ActivityCompat.startActivityForResult(getActivity(), intent, RQ_VIEWWALLPAPER, options.toBundle());
-                    }
-                });
-                return;
-            }
-        }
-
         ActivityCompat.startActivityForResult(getActivity(), intent, RQ_VIEWWALLPAPER, options.toBundle());
     }
 
     private void showOptions(final int imageIndex) {
+        if (!Config.get().wallpapersAllowDownload()) {
+            final WallpaperUtils.Wallpaper wallpaper = mWallpapers.get(imageIndex);
+            WallpaperUtils.download(getActivity(), wallpaper, true);
+            return;
+        }
+
         new MaterialDialog.Builder(getActivity())
                 .title(R.string.wallpaper)
                 .items(R.array.wallpaper_options)
@@ -195,9 +187,9 @@ public class WallpapersFragment extends BasePageFragment implements
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
 
-        mAdapter = new WallpaperAdapter(new WallpaperAdapter.ClickListener() {
+        mAdapter = new WallpaperAdapter(getActivity(), new WallpaperAdapter.ClickListener() {
             @Override
             public boolean onClick(View view, int index, boolean longPress) {
                 if (longPress) {
@@ -221,7 +213,7 @@ public class WallpapersFragment extends BasePageFragment implements
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
         WallpaperUtils.resetOptionCache(true);
     }
 
@@ -298,5 +290,9 @@ public class WallpapersFragment extends BasePageFragment implements
         mAdapter.filter(null);
         setListShown(true);
         return false;
+    }
+
+    public RecyclerView getRecyclerView() {
+        return mRecyclerView;
     }
 }

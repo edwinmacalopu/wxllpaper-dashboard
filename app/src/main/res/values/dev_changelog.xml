@@ -3,8 +3,6 @@
 
     <bool name="changelog_enabled">true</bool>
 
-
-
     <string-array name="changelog" translatable="false">
 
         <item><![CDATA[ <b> 1.1 - 4 june 2016 </b> ]]></item>

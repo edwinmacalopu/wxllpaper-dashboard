@@ -1,9 +1,8 @@
 package com.sergioventura.wxllpaper.notification;
 
 /**
- * Created by edwin Pro on 1/06/2016.
+ * Created by edwin Pro on 26/06/2016.
  */
-
 
 import android.util.Log;
 

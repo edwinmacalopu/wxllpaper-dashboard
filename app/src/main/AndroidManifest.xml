@@ -20,8 +20,6 @@
         </intent-filter>
     </service>
 
-
-
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -34,9 +32,8 @@
             android:name="com.sergioventura.wxllpaper.util.GlideConfiguration"
             android:value="GlideModule" />
 
-
         <service
-            android:name="com.sergioventura.wxllpaper.services.GaufrerWallpaperSource"
+            android:name=".services.GaufrerWallpaperSource"
             android:description="@string/muzei_description"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -55,7 +52,7 @@
         </service>
 
         <activity
-            android:name="com.sergioventura.wxllpaper.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -75,13 +72,11 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
-                <activity
-            android:name="com.sergioventura.wxllpaper.ui.IconPickerActivity"
+        <activity
+            android:name=".ui.IconPickerActivity"
             android:exported="true"
             android:label="@string/app_name">
-
 
 
             <!-- Image picker -->
@@ -101,31 +96,20 @@
             <!--</intent-filter>-->
 
         </activity>
-
-
         <activity
-            android:name="com.sergioventura.wxllpaper.ui.IconMoreActivity"
+            android:name=".ui.IconMoreActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Light.Translucent" />
-
         <activity
-            android:name="com.sergioventura.wxllpaper.viewer.ViewerActivity"
+            android:name=".viewer.ViewerActivity"
             android:label="@string/app_name_wallpaper"
             android:theme="@style/AppTheme.Viewer" />
-
 
         <!-- Uncomment for Zooper, MAKE SURE YOU RENAME COM.AFOLLESTAD.POLAR TO BE UNIQUE TO YOUR PACK -->
         <!--<provider-->
         <!--android:name=".zooper.TemplateProvider"-->
-        <!--android:authorities="com.afollestad.polar.zwprovider"/>-->
-
-
+        <!--android:authorities="com.sergioventura.wxllpaper.zwprovider"/>-->
 
     </application>
-
-
-
-
-
 
 </manifest>

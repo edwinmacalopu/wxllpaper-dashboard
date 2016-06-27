@@ -14,13 +14,15 @@ import com.sergioventura.wxllpaper.fragments.base.BasePageFragment;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * @author Aidan Follestad (afollestad)
  */
 public class HomeFragment extends BasePageFragment {
+    private Unbinder unbinder;
 
-//    @Bind(R.id.fab)
+//    @BindView(R.id.fab)
 //    FloatingActionButton mFab;
 
     @Nullable
@@ -32,13 +34,13 @@ public class HomeFragment extends BasePageFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @OnClick(R.id.fab)

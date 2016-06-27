@@ -42,8 +42,7 @@
                 android:lineSpacingMultiplier="1.2"
                 android:text="@string/homepage_description"
                 android:textColor="?android:textColorPrimary"
-                android:textSize="@dimen/content_text_size"
-                android:layout_gravity="center_vertical" />
+                android:textSize="@dimen/content_text_size" />
 
         </LinearLayout>
 
