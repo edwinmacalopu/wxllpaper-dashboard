@@ -1,7 +1,6 @@
 package com.sergioventura.wxllpaper.viewer;
 
 import android.app.Fragment;
-import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sergioventura.wxllpaper.util.WallpaperUtils;
@@ -12,22 +11,18 @@ import com.sergioventura.wxllpaper.util.WallpaperUtils;
  */
 public class ViewerPageAdapter extends FragmentStatePagerAdapter {
 
-    private final int thumbHeight;
-    private final int thumbWidth;
     public int mCurrentPage;
     private final WallpaperUtils.WallpapersHolder mWallpapers;
 
-    public ViewerPageAdapter(AppCompatActivity context, int initialOffset, WallpaperUtils.WallpapersHolder wallpapers, int thumbWidth, int thumbHeight) {
+    public ViewerPageAdapter(AppCompatActivity context, int initialOffset, WallpaperUtils.WallpapersHolder wallpapers) {
         super(context.getFragmentManager());
         mCurrentPage = initialOffset;
         mWallpapers = wallpapers;
-        this.thumbWidth = thumbWidth;
-        this.thumbHeight = thumbHeight;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return ViewerPageFragment.create(mWallpapers.get(position), position, thumbWidth, thumbHeight)
+        return ViewerPageFragment.create(mWallpapers.get(position), position)
                 .setIsActive(mCurrentPage == position);
     }
 
@@ -38,6 +33,6 @@ public class ViewerPageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getItemPosition(Object object) {
-        return PagerAdapter.POSITION_NONE;
+        return POSITION_NONE;
     }
 }

@@ -15,7 +15,6 @@ import com.afollestad.iconrequest.App;
 import com.afollestad.materialdialogs.util.DialogUtils;
 import com.sergioventura.wxllpaper.R;
 import com.sergioventura.wxllpaper.config.Config;
-import com.sergioventura.wxllpaper.config.IConfig;
 import com.sergioventura.wxllpaper.util.RequestLimiter;
 import com.sergioventura.wxllpaper.util.TintUtils;
 import com.sergioventura.wxllpaper.util.Utils;

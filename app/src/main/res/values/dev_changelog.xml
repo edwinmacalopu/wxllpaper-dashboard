@@ -3,7 +3,18 @@
 
     <bool name="changelog_enabled">true</bool>
 
+
+
     <string-array name="changelog" translatable="false">
+
+        <item><![CDATA[ <b> 1.2.2 - 29 june 2016 </b> ]]></item>
+        <item><![CDATA[ <b>eliminating activity causing closures</b> ]]></item>
+
+        <item><![CDATA[ <b> 1.2.1 - 29 june 2016 </b> ]]></item>
+        <item><![CDATA[ <b>fixes android 4.2 -4.4</b> ]]></item>
+
+        <item><![CDATA[ <b> 1.2 - 27 june 2016 </b> ]]></item>
+        <item><![CDATA[ <b>suport android N</b> ]]></item>
 
         <item><![CDATA[ <b> 1.1 - 4 june 2016 </b> ]]></item>
         <item><![CDATA[ <b>implementation of notifications

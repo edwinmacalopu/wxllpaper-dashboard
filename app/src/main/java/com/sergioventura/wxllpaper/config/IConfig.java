@@ -26,8 +26,6 @@ public interface IConfig {
     @Nullable
     String wallpapersJsonUrl();
 
-    boolean wallpapersAllowDownload();
-
     boolean wallpapersEnabled();
 
     boolean zooperEnabled();

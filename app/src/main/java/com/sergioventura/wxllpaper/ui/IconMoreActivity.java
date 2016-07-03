@@ -26,7 +26,7 @@ import com.sergioventura.wxllpaper.util.DrawableXmlParser;
 import com.sergioventura.wxllpaper.util.TintUtils;
 import com.sergioventura.wxllpaper.util.Utils;
 
-import butterknife.BindView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -35,12 +35,12 @@ import butterknife.ButterKnife;
 public class IconMoreActivity extends BaseThemedActivity
         implements IconMoreAdapter.ClickListener, ISelectionMode {
 
-    public static final String EXTRA_REVEAL_ANIM_LOCATION = "com.sergioventura.wxllpaper.REVEAL_ANIM_LOCATION";
-    public static final String EXTRA_CATEGORY = "com.sergioventura.wxllpaper.CATEGORY";
+    public static final String EXTRA_REVEAL_ANIM_LOCATION = "com.afollestad.polar.REVEAL_ANIM_LOCATION";
+    public static final String EXTRA_CATEGORY = "com.afollestad.polar.CATEGORY";
 
-    @BindView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar mToolbar;
-    @BindView(android.R.id.list)
+    @Bind(android.R.id.list)
     RecyclerView mRecyclerView;
 
     private IconMoreAdapter mAdapter;
@@ -164,6 +164,12 @@ public class IconMoreActivity extends BaseThemedActivity
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 
     @Override

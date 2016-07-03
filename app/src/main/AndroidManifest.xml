@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sergioventura.wxllpaper">
@@ -20,6 +21,8 @@
         </intent-filter>
     </service>
 
+
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,8 +35,9 @@
             android:name="com.sergioventura.wxllpaper.util.GlideConfiguration"
             android:value="GlideModule" />
 
+
         <service
-            android:name=".services.GaufrerWallpaperSource"
+            android:name="com.sergioventura.wxllpaper.services.GaufrerWallpaperSource"
             android:description="@string/muzei_description"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -52,7 +56,7 @@
         </service>
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.sergioventura.wxllpaper.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -72,11 +76,13 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".ui.IconPickerActivity"
+                <activity
+            android:name="com.sergioventura.wxllpaper.ui.IconPickerActivity"
             android:exported="true"
             android:label="@string/app_name">
+
 
 
             <!-- Image picker -->
@@ -96,20 +102,31 @@
             <!--</intent-filter>-->
 
         </activity>
+
+
         <activity
-            android:name=".ui.IconMoreActivity"
+            android:name="com.sergioventura.wxllpaper.ui.IconMoreActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.Light.Translucent" />
+
         <activity
-            android:name=".viewer.ViewerActivity"
+            android:name="com.sergioventura.wxllpaper.viewer.ViewerActivity"
             android:label="@string/app_name_wallpaper"
             android:theme="@style/AppTheme.Viewer" />
+
 
         <!-- Uncomment for Zooper, MAKE SURE YOU RENAME COM.AFOLLESTAD.POLAR TO BE UNIQUE TO YOUR PACK -->
         <!--<provider-->
         <!--android:name=".zooper.TemplateProvider"-->
-        <!--android:authorities="com.sergioventura.wxllpaper.zwprovider"/>-->
+        <!--android:authorities="com.afollestad.polar.zwprovider"/>-->
+
+
 
     </application>
+
+
+
+
+
 
 </manifest>

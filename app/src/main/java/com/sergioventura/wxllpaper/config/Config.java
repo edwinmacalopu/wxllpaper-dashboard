@@ -114,11 +114,6 @@ public class Config implements IConfig {
     }
 
     @Override
-    public boolean wallpapersAllowDownload() {
-        return mR != null && mR.getBoolean(R.bool.wallpapers_allow_download);
-    }
-
-    @Override
     public boolean wallpapersEnabled() {
         String url = wallpapersJsonUrl();
         return url != null && !url.trim().isEmpty();
